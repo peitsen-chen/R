@@ -1,0 +1,40 @@
+＃財務組成
+t103 <- c(155550385,104274665,120645621,8279131,163642210)
+label103 <- c("current asset","current liability","non-current asset","non-current liability","equity")
+p103 <- t103/sum(t103)
+pie(p103,labels = label103,main = "asus103")
+
+t104 <- c(135861965,81556623,123249412,10202815,167351939)
+label104 <- c("current asset","current liability","non-current asset","non-current liability","equity")
+p104 <- t104/sum(t104)
+pie(p104,labels = label104,main = "asus104")
+
+t105 <- c(135861965,51556623,145088469,11126031,181485483)
+label105 <- c("current asset","current liability","non-current asset","non-current liability","equity")
+p105 <- t105/sum(t105)
+pie(p105,labels = label105,main = "asus105")
+＃淨利和營業利潤的比較
+netincome <- c(19470409,17097470,19202737)
+plot(netincome,type="o",col="blue",ylab="$",xlab = "years",ylim =c(9000000,20000000),xaxt="n")
+operatingincome<- c(10685311,9263997,9080820)
+par(new=TRUE)
+plot(operatingincome,type="o",ylab="$",xlab = "years",col="red",ylim =c(9000000,20000000),xaxt="n")
+options(scipen = 1)
+ILoveLittree=c("103","104","105")
+axis(1,at=seq(1,3,1),label=ILoveLittree) 
+legend("bottomleft",inset = .01,title = "linename",c("operating income","net income"),lty = c(1,1),
+       col=c("red","blue"),x.intersp=0.5,y.intersp=0.5,bty="n")
+原文網址：https://kknews.cc/news/p48a4j2.html
+＃流動比率
+ca <- c(155550385,135861965,135861965)
+cl <- c(104274665,81556623,51556623)
+ca/cl
+plot(ca/cl,type = "o",col="purple")
+＃資產周轉率
+assetreturn <- c(0.094,	0.078,	0.083)
+barplot(assetreturn,axes=TRUE,ylab="$",xlab="year",main = "asset return",col = hsv(0.50),names.arg = c("103","104","105"),ylim = c(0,0.1))
+＃應收帳款週轉率及收帳期間
+ARturnover <- c(62.43,50.08,45.01)
+collectiondays <- c(5.85,7.29,8.11)
+barplot(collectiondays,ylim =c(0,10),col = hsv(0.23),xlab = "year",ylab = "days",names.arg = c("103","104","105"))
+plot(ARturnover,ylim =c(0,70),col = hsv(0.1),xlab = "year",ylab = "ratio",type = "o")
